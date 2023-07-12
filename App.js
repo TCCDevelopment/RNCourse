@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function App() {
   return (
@@ -7,7 +7,7 @@ export default function App() {
         <Text>Another piece of text</Text>
       </View>
       <Text>Hello World!</Text>
-      <Button title='Tap Me' />
+      <Button title="Tap Me" />
     </View>
   );
 }
@@ -15,8 +15,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
