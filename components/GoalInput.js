@@ -6,19 +6,21 @@ function GoalInput(props) {
   const [addGoalBtnState, setAddGoalBtnDisabled] = useState(true);
 
   function goalInputHandler(enteredText) {
-    setEnteredGoalText(enteredText);    
+    setEnteredGoalText(enteredText);
     updateAddGoalBtn(enteredText);
   }
 
-  function updateAddGoalBtn(enteredText){
-    enteredText.trim() == "" ? setAddGoalBtnDisabled(true) : setAddGoalBtnDisabled(false);
+  function updateAddGoalBtn(enteredText) {
+    enteredText.trim() == ""
+      ? setAddGoalBtnDisabled(true)
+      : setAddGoalBtnDisabled(false);
   }
 
   function addGoalHandler() {
     props.onAddGoal(enteredGoalText.trim());
-    enteredText="";
+    enteredText = "";
     setEnteredGoalText(enteredText);
-    updateAddGoalBtn(enteredText)
+    updateAddGoalBtn(enteredText);
   }
 
   return (
@@ -29,7 +31,11 @@ function GoalInput(props) {
         onChangeText={goalInputHandler}
         value={enteredGoalText}
       />
-      <Button title="Add Goal" onPress={addGoalHandler} disabled={addGoalBtnState} />
+      <Button
+        title="Add Goal"
+        onPress={addGoalHandler}
+        disabled={addGoalBtnState}
+      />
     </View>
   );
 }
