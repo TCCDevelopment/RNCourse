@@ -4,6 +4,7 @@ import { View, StyleSheet, FlatList } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
+
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
 
@@ -16,9 +17,7 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <View>
-        return <GoalInput onAddGoal={addGoalHandler} />
-      </View>
+      <GoalInput onAddGoal={addGoalHandler} />
       <View style={styles.goalsContainer}>
         <FlatList
           alwaysBounceVertical={false}
