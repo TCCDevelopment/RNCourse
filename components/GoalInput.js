@@ -3,14 +3,22 @@ import { View, StyleSheet, TextInput, Button } from "react-native";
 
 function GoalInput(props) {
   const [enteredGoalText, setEnteredGoalText] = useState("");
+  const [addGoalBtnState, setAddGoalBtnDisabled] = useState(true);
 
   function goalInputHandler(enteredText) {
-    setEnteredGoalText(enteredText);
+    setEnteredGoalText(enteredText);    
+    updateAddGoalBtn(enteredText);
+  }
+
+  function updateAddGoalBtn(enteredText){
+    enteredText=="" ? setAddGoalBtnDisabled(true) : setAddGoalBtnDisabled(false);
   }
 
   function addGoalHandler() {
     props.onAddGoal(enteredGoalText);
-    setEnteredGoalText("");
+    enteredText="";
+    setEnteredGoalText(enteredText);
+    updateAddGoalBtn(enteredText)
   }
 
   return (
@@ -21,7 +29,7 @@ function GoalInput(props) {
         onChangeText={goalInputHandler}
         value={enteredGoalText}
       />
-      <Button title="Add Goal" onPress={addGoalHandler} />
+      <Button title="Add Goal" onPress={addGoalHandler} disabled={addGoalBtnState} />
     </View>
   );
 }
