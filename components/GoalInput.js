@@ -11,11 +11,11 @@ function GoalInput(props) {
   }
 
   function updateAddGoalBtn(enteredText){
-    enteredText=="" ? setAddGoalBtnDisabled(true) : setAddGoalBtnDisabled(false);
+    enteredText.trim() == "" ? setAddGoalBtnDisabled(true) : setAddGoalBtnDisabled(false);
   }
 
   function addGoalHandler() {
-    props.onAddGoal(enteredGoalText);
+    props.onAddGoal(enteredGoalText.trim());
     enteredText="";
     setEnteredGoalText(enteredText);
     updateAddGoalBtn(enteredText)
